@@ -4,6 +4,7 @@ import { slots } from "./data";
 import { seats } from "./data";
 import logo from "../img/logo.png";
 
+//Dashboard of book my show
 const Dasboard = () => {
   const [movie, setMovie] = useState();
   const [slot, setSlot] = useState();

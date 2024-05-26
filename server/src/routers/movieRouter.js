@@ -2,7 +2,7 @@ const express = require("express")
 const router = express.Router()
 const collection_connection = require("../modul/schema");
 
-
+//Posting Booking Details
 router.post('/booking' ,async (req, res) => {
     try{
         const moviesRecord = collection_connection(req.body)
@@ -13,6 +13,7 @@ router.post('/booking' ,async (req, res) => {
     }
 })
 
+//Geting Data Of Booking
 router.get('/booking' ,async (req, res) => {
     try{
         const [data] = await collection_connection.find().sort({_id:-1}).limit(1)

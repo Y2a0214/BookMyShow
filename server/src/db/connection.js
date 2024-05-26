@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const apiKey = process.env.API_KEY;
 
-// connected to atlas
+// connected to mongo atlas
 mongoose.connect(apiKey, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
