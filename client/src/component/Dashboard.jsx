@@ -21,14 +21,13 @@ const Dasboard = () => {
     const fetchBookinkDeatils = async () => {
       try {
         const bookingDetails = await fetch('https://bookmyshowalmabetter-58gr.onrender.com/booking')
-        if (!bookingDetails.ok) {
-          throw new Error('Network response was not ok')
-        }
         const movieDeatils = await bookingDetails.json()
         setBookingdetails(movieDeatils.data)
-        console.log(movieDeatils)
+        // if (!bookingDetails.ok) {
+        //   throw new Error('Network response was not ok')
+        // }
       } catch (e) {
-        console.log('Error fetching booking details' + e)
+        window.alert(e)
       }
 
     }
@@ -37,7 +36,6 @@ const Dasboard = () => {
     setShouldFetchDetails(false)
   }
   }, [shouldFetchDetails])
-  console.log(bookingDetails)
 
   const bookMovie = async (e) => {
     if (!movie || !slot || !Object.keys(selectedSeats).length) {
@@ -77,7 +75,6 @@ const Dasboard = () => {
         window.alert("Error booking movie: " + data.message);
       }
     } catch (e) {
-      console.error("Error:", e);
       window.alert("An error occurred while booking the movie");
     }
   };
